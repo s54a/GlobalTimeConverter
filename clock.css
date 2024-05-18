@@ -1,0 +1,291 @@
+.clock {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #fff;
+  /* border: 5px solid #000; */
+  margin: 1rem 0;
+}
+
+.innerCircle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  /* font-size: 1.5rem; */
+  /* font-weight: bold; */
+  color: #000;
+}
+
+.clock .number1 {
+  --rotation: 15deg;
+}
+
+.clock .number2 {
+  --rotation: 30deg;
+}
+
+.clock .number3 {
+  --rotation: 45deg;
+}
+
+.clock .number4 {
+  --rotation: 60deg;
+}
+
+.clock .number5 {
+  --rotation: 75deg;
+}
+
+.clock .number6 {
+  --rotation: 90deg;
+}
+
+.clock .number7 {
+  --rotation: 105deg;
+}
+
+.clock .number8 {
+  --rotation: 120deg;
+}
+
+.clock .number9 {
+  --rotation: 135deg;
+}
+
+.clock .number10 {
+  --rotation: 150deg;
+}
+
+.clock .number11 {
+  --rotation: 165deg;
+}
+
+.clock .number12 {
+  --rotation: 180deg;
+}
+
+.clock .number13 {
+  --rotation: 195deg;
+}
+
+.clock .number14 {
+  --rotation: 210deg;
+}
+
+.clock .number15 {
+  --rotation: 225deg;
+}
+
+.clock .number16 {
+  --rotation: 240deg;
+}
+
+.clock .number17 {
+  --rotation: 255deg;
+}
+
+.clock .number18 {
+  --rotation: 270deg;
+}
+
+.clock .number19 {
+  --rotation: 285deg;
+}
+
+.clock .number20 {
+  --rotation: 300deg;
+}
+
+.clock .number21 {
+  --rotation: 315deg;
+}
+
+.clock .number22 {
+  --rotation: 330deg;
+}
+
+.clock .number23 {
+  --rotation: 345deg;
+}
+
+.clock .shortNumber24 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 7.5deg;
+}
+.clock .shortNumber1 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 22.5deg;
+}
+
+.clock .shortNumber2 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 37.5deg;
+}
+
+.clock .shortNumber3 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 52.5deg;
+}
+
+.clock .shortNumber4 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 67.5deg;
+}
+
+.clock .shortNumber5 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 82.5deg;
+}
+
+.clock .shortNumber6 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 97.5deg;
+}
+
+.clock .shortNumber7 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 112.5deg;
+}
+
+.clock .shortNumber8 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 127.5deg;
+}
+
+.clock .shortNumber9 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 142.5deg;
+}
+
+.clock .shortNumber10 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 157.5deg;
+}
+
+.clock .shortNumber11 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 172.5deg;
+}
+
+.clock .shortNumber12 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 187.5deg;
+}
+
+.clock .shortNumber13 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 202.5deg;
+}
+
+.clock .shortNumber14 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 217.5deg;
+}
+
+.clock .shortNumber15 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 232.5deg;
+}
+
+.clock .shortNumber16 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 247.5deg;
+}
+
+.clock .shortNumber17 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 262.5deg;
+}
+
+.clock .shortNumber18 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 277.5deg;
+}
+
+.clock .shortNumber19 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 292.5deg;
+}
+
+.clock .shortNumber20 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 307.5deg;
+}
+
+.clock .shortNumber21 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 322.5deg;
+}
+
+.clock .shortNumber22 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 337.5deg;
+}
+
+.clock .shortNumber23 {
+  /* font-size: 0.8rem; */
+  margin: 0.2rem;
+  /* font-weight: normal; */
+  --rotation: 352.5deg;
+}
+
+/* .clock .number24 {
+  --rotation: 330deg;
+} */
