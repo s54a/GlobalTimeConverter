@@ -16,7 +16,7 @@
     <h1>Remote Work Time Converter</h1>
     <div class="container">
       <div class="timezone-selector">
-        <label for="timezone">Select your timezone:</label>
+        <label for="timezone">Select your timezone</label>
         <select id="timezone" name="timezone">
           <option value="5.5" selected>India UTC + 05:30</option>
           <option value="-12">Baker Island UTC − 12:00</option>
@@ -62,24 +62,28 @@
 
       <div class="set-timer">
         <div class="innerDiv">
-          <label for="start-time">Start Time:</label>
-          <input
-            type="time"
-            id="start-time"
-            name="start-time"
-            placeholder="HH:MM"
-            value="09:00"
-            required
-          />
-          <label for="end-time">End Time:</label>
-          <input
-            type="time"
-            id="end-time"
-            name="end-time"
-            placeholder="HH:MM"
-            value="17:00"
-            required
-          />
+          <div class="labelInputDiv labelInputDiv1">
+            <label for="start-time">Start Time</label>
+            <input
+              type="time"
+              id="start-time"
+              name="start-time"
+              placeholder="HH:MM"
+              value="09:00"
+              required
+            />
+          </div>
+          <div class="labelInputDiv labelInputDiv2">
+            <label for="end-time">End Time</label>
+            <input
+              type="time"
+              id="end-time"
+              name="end-time"
+              placeholder="HH:MM"
+              value="17:00"
+              required
+            />
+          </div>
         </div>
         <button id="convertTime">Convert</button>
       </div>
@@ -87,11 +91,11 @@
       <h2>Add City</h2>
       <div id="add-city-form">
         <div class="innerDiv">
-          <label for="city-name">City Name:</label>
+          <label for="city-name">City Name</label>
           <input type="text" id="city-name" placeholder="City" />
         </div>
-        <div class="innerDiv">
-          <label for="city-offset">Select your timezone:</label>
+        <div class="innerDiv selectInnerDiv">
+          <label for="city-offset">Select your timezone</label>
           <select id="city-offset" name="city-offset">
             <option value="5.5" selected>India UTC + 05:30</option>
             <option value="-12">Baker Island UTC − 12:00</option>

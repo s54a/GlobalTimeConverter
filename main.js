@@ -40,45 +40,6 @@ function loadCities() {
       { name: "Sydney", offset: 10 },
       { name: "Melbourne", offset: 10 },
       { name: "Wellington", offset: 12 },
-      { name: "India", offset: 5.5 },
-      { name: "Baker Island", offset: -12 },
-      { name: "Midway Atoll", offset: -11 },
-      { name: "Honolulu", offset: -10 },
-      { name: "Marquesas Islands", offset: -9.5 },
-      { name: "Anchorage", offset: -9 },
-      { name: "Los Angeles", offset: -8 },
-      { name: "Denver", offset: -7 },
-      { name: "Chicago", offset: -6 },
-      { name: "New York", offset: -5 },
-      { name: "Caracas", offset: -4.5 },
-      { name: "Santiago", offset: -4 },
-      { name: "St. John's", offset: -3.5 },
-      { name: "Buenos Aires", offset: -3 },
-      { name: "Fernando de Noronha", offset: -2 },
-      { name: "Azores", offset: -1 },
-      { name: "London", offset: 0 },
-      { name: "Paris", offset: 1 },
-      { name: "Athens", offset: 2 },
-      { name: "Moscow", offset: 3 },
-      { name: "Tehran", offset: 3.5 },
-      { name: "Dubai", offset: 4 },
-      { name: "Kabul", offset: 4.5 },
-      { name: "Karachi", offset: 5 },
-      { name: "Kathmandu", offset: 5.75 },
-      { name: "Dhaka", offset: 6 },
-      { name: "Yangon", offset: 6.5 },
-      { name: "Bangkok", offset: 7 },
-      { name: "Singapore", offset: 8 },
-      { name: "Eucla", offset: 8.75 },
-      { name: "Tokyo", offset: 9 },
-      { name: "Adelaide", offset: 9.5 },
-      { name: "Sydney", offset: 10 },
-      { name: "Lord Howe Island", offset: 10.5 },
-      { name: "Vladivostok", offset: 11 },
-      { name: "Auckland", offset: 12 },
-      { name: "Chatham Islands", offset: 12.75 },
-      { name: "Tongatapu", offset: 13 },
-      { name: "Kiritimati", offset: 14 },
     ];
   }
 }
@@ -140,7 +101,7 @@ function convertTime() {
   });
 
   let resultHTML = `
-    ${resultDiv}
+  ${resultDiv}
     <div class="resultParagraph">${resultParagraph}</div>
   `;
 
@@ -239,6 +200,4 @@ window.onpointermove = (event) => {
     },
     { duration: 3000, fill: "forwards" }
   );
-  // blob.style.left = `${clientX}px`;
-  // blob.style.top = `${clientY}px`;
 };
