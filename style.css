@@ -58,7 +58,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #007bffcc;
 }
 
 .timezone-selector,
@@ -71,15 +71,19 @@ button:hover {
 
 .result {
   margin: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .resultText {
-  margin: 2rem;
-  margin-bottom: 0;
+  margin: 2rem auto 0;
+  max-width: 50rem;
+  padding: 0 2.5rem;
   text-align: center;
 }
 
-.resultParagraph {
+.clockDiv {
   display: grid;
   text-align: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -135,18 +139,55 @@ input[type="text"] {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: #007bff;
-  filter: blur(75px);
+  filter: blur(100px);
   z-index: -100;
 }
 
+.github {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.github a {
+  text-decoration: none;
+  color: red;
+  color: white;
+  color: lime;
+  color: dodgerblue;
+}
+
+.github a::after {
+  content: "";
+  color: dodgerblue;
+  color: white;
+  color: lime;
+  color: red;
+  position: absolute;
+  width: 10%;
+  transform: scaleX(0);
+  border-radius: 5px;
+  height: 0.1em;
+  bottom: -2px;
+  left: 45%;
+  background: currentcolor;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.github a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 @media screen and (max-width: 1300px) {
-  .resultParagraph {
+  .clockDiv {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .resultParagraph {
+  .clockDiv {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -169,13 +210,13 @@ input[type="text"] {
     margin: 0.5rem 0;
   }
 
-  .resultParagraph {
+  .clockDiv {
     grid-template-columns: 1fr;
   }
 
   .resultText {
-    margin: 0;
     margin: 2rem;
+    padding: 0 1rem;
   }
 
   .labelInputDiv {
@@ -208,7 +249,7 @@ input[type="text"] {
     max-width: 60vw;
   }
 
-  .resultParagraph {
+  .clockDiv {
     grid-template-columns: auto auto auto;
   }
 
@@ -223,7 +264,7 @@ input[type="text"] {
     max-width: 70vw;
   }
 
-  .resultParagraph {
+  .clockDiv {
     grid-template-columns: auto auto;
   }
 
@@ -242,7 +283,7 @@ input[type="text"] {
     max-width: 80vw;
   }
 
-  .resultParagraph {
+  .clockDiv {
     grid-template-columns: auto;
   }
 
@@ -264,7 +305,7 @@ input[type="text"] {
     max-width: 90vw;
   }
 
-  .resultParagraph {
+  .clockDiv {
     grid-template-columns: auto;
   }
 
