@@ -439,7 +439,7 @@ function convertTime() {
 
           <div class="github">
             <a
-              href="https://github.com/s54a/GlobalTimeConverter"
+              href="https://github.com/s54a/GlobalTimeConvertor"
               target="_blank"
               rel="noopener noreferrer"
               >GitHub</a
@@ -469,9 +469,9 @@ function convertTime() {
     let gradient;
 
     if (startDeg > 243.75) {
-      gradient = `background: conic-gradient(red 0deg ${endDeg}deg,white ${endDeg}deg ${startDeg}deg,red ${startDeg}deg 0deg);`;
+      gradient = `background: conic-gradient(red 0deg ${endDeg}deg,#ddd ${endDeg}deg ${startDeg}deg,red ${startDeg}deg 0deg);`;
     } else {
-      gradient = `background: conic-gradient(white 0deg ${startDeg}deg,red ${startDeg}deg ${endDeg}deg,white ${startDeg}deg ${endDeg}deg);`;
+      gradient = `background: conic-gradient(#ddd 0deg ${startDeg}deg,red ${startDeg}deg ${endDeg}deg,#ddd ${startDeg}deg ${endDeg}deg);`;
     }
 
     if (city.offset !== myTimezone) {
