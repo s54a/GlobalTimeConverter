@@ -496,7 +496,7 @@ function convertTime() {
           ${clock(gradient)}
 
             <div class="city">${city.name}</div>
-            <div class="city">${resultStartTime} - ${resultEndTime}</div>
+            <div class="cityTime">${resultStartTime} - ${resultEndTime}</div>
             <div class="currentCityTime city" id="current-time-${city.name.replace(
               /\s+/g,
               "-"
