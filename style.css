@@ -100,11 +100,12 @@ button:hover {
 }
 
 .city {
-  font-size: 1.25rem;
+  padding: 0.25rem 0;
+  font-size: 1.5rem;
 }
 
-.cityTime {
-  font-size: 1.5rem;
+.timeZoneString {
+  padding: 0;
 }
 
 .labelInputDiv {
@@ -236,11 +237,19 @@ input[type="text"] {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   select,
   input[type="text"] {
     width: 10rem;
   }
+}
+
+.ps2 {
+  padding-right: 1rem;
+}
+
+#addCity {
+  font-size: 1.2rem;
 }
 
 /* 

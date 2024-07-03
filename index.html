@@ -16,86 +16,168 @@
     <h1>Global Time Converter</h1>
     <div class="container">
       <div class="timezone-selector">
-        <label for="timezone">Timezone</label>
+        <label class="ps2" for="timezone">Timezone</label>
         <select id="timezone" name="timezone">
-          <option value="5.5" selected>India UTC + 05:30</option>
-          <option value="-12">Baker Island UTC − 12:00</option>
-          <option value="-11">Midway Atoll UTC − 11:00</option>
-          <option value="-10">Honolulu UTC − 10:00</option>
-          <option value="-9.5">Marquesas Islands UTC − 09:30</option>
-          <option value="-9">Anchorage UTC − 09:00</option>
-          <option value="-8">Los Angeles UTC − 08:00</option>
-          <option value="-7">Denver UTC − 07:00</option>
-          <option value="-6">Chicago UTC − 06:00</option>
-          <option value="-5">New York UTC − 05:00</option>
-          <option value="-4.5">Caracas UTC − 04:30</option>
-          <option value="-4">Santiago UTC − 04:00</option>
-          <option value="-3.5">St. John's UTC − 03:30</option>
-          <option value="-3">Buenos Aires UTC − 03:00</option>
-          <option value="-2">Fernando de Noronha UTC − 02:00</option>
-          <option value="-1">Azores UTC − 01:00</option>
-          <option value="0">London UTC + 00:00</option>
-          <option value="1">Paris UTC + 01:00</option>
-          <option value="2">Athens UTC + 02:00</option>
-          <option value="3">Moscow UTC + 03:00</option>
-          <option value="3.5">Tehran UTC + 03:30</option>
-          <option value="4">Dubai UTC + 04:00</option>
-          <option value="4.5">Kabul UTC + 04:30</option>
-          <option value="5">Karachi UTC + 05:00</option>
-          <option value="5.75">Kathmandu UTC + 05:45</option>
-          <option value="6">Dhaka UTC + 06:00</option>
-          <option value="6.5">Yangon UTC + 06:30</option>
-          <option value="7">Bangkok UTC + 07:00</option>
-          <option value="8">Singapore UTC + 08:00</option>
-          <option value="8.75">Eucla UTC + 08:45</option>
-          <option value="9">Tokyo UTC + 09:00</option>
-          <option value="9.5">Adelaide UTC + 09:30</option>
-          <option value="10">Sydney UTC + 10:00</option>
-          <option value="10.5">Lord Howe Island UTC + 10:30</option>
-          <option value="11">Vladivostok UTC + 11:00</option>
-          <option value="12">Auckland UTC + 12:00</option>
-          <option value="12.75">Chatham Islands UTC + 12:45</option>
-          <option value="13">Tongatapu UTC + 13:00</option>
-          <option value="14">Kiritimati UTC + 14:00</option>
+          <option value="5.5" data-timezonelocalstring="Asia/Kolkata" selected>
+            India UTC + 05:30
+          </option>
+          <option value="-12" data-timezonelocalstring="Pacific/Kwajalein">
+            Baker Island UTC − 12:00
+          </option>
+          <option value="-11" data-timezonelocalstring="Pacific/Midway">
+            Midway Atoll UTC − 11:00
+          </option>
+          <option value="-10" data-timezonelocalstring="Pacific/Honolulu">
+            Honolulu UTC − 10:00
+          </option>
+          <option value="-9.5" data-timezonelocalstring="Pacific/Marquesas">
+            Marquesas Islands UTC − 09:30
+          </option>
+          <option value="-9" data-timezonelocalstring="America/Anchorage">
+            Anchorage UTC − 09:00
+          </option>
+          <option value="-8" data-timezonelocalstring="America/Los_Angeles">
+            Los Angeles UTC − 08:00
+          </option>
+          <option value="-7" data-timezonelocalstring="America/Denver">
+            Denver UTC − 07:00
+          </option>
+          <option value="-6" data-timezonelocalstring="America/Chicago">
+            Chicago UTC − 06:00
+          </option>
+          <option value="-5" data-timezonelocalstring="America/New_York">
+            New York UTC − 05:00
+          </option>
+          <option value="-4.5" data-timezonelocalstring="America/Caracas">
+            Caracas UTC − 04:30
+          </option>
+          <option value="-4" data-timezonelocalstring="America/Santiago">
+            Santiago UTC − 04:00
+          </option>
+          <option value="-3.5" data-timezonelocalstring="America/St_Johns">
+            St. John's UTC − 03:30
+          </option>
+          <option
+            value="-3"
+            data-timezonelocalstring="America/Argentina/Buenos_Aires"
+          >
+            Buenos Aires UTC − 03:00
+          </option>
+          <option value="-2" data-timezonelocalstring="America/Noronha">
+            Fernando de Noronha UTC − 02:00
+          </option>
+          <option value="-1" data-timezonelocalstring="Atlantic/Azores">
+            Azores UTC − 01:00
+          </option>
+          <option value="0" data-timezonelocalstring="Europe/London">
+            London UTC + 00:00
+          </option>
+          <option value="1" data-timezonelocalstring="Europe/Paris">
+            Paris UTC + 01:00
+          </option>
+          <option value="2" data-timezonelocalstring="Europe/Athens">
+            Athens UTC + 02:00
+          </option>
+          <option value="3" data-timezonelocalstring="Europe/Moscow">
+            Moscow UTC + 03:00
+          </option>
+          <option value="3.5" data-timezonelocalstring="Asia/Tehran">
+            Tehran UTC + 03:30
+          </option>
+          <option value="4" data-timezonelocalstring="Asia/Dubai">
+            Dubai UTC + 04:00
+          </option>
+          <option value="4.5" data-timezonelocalstring="Asia/Kabul">
+            Kabul UTC + 04:30
+          </option>
+          <option value="5" data-timezonelocalstring="Asia/Karachi">
+            Karachi UTC + 05:00
+          </option>
+          <option value="5.75" data-timezonelocalstring="Asia/Kathmandu">
+            Kathmandu UTC + 05:45
+          </option>
+          <option value="6" data-timezonelocalstring="Asia/Dhaka">
+            Dhaka UTC + 06:00
+          </option>
+          <option value="6.5" data-timezonelocalstring="Asia/Yangon">
+            Yangon UTC + 06:30
+          </option>
+          <option value="7" data-timezonelocalstring="Asia/Bangkok">
+            Bangkok UTC + 07:00
+          </option>
+          <option value="8" data-timezonelocalstring="Asia/Singapore">
+            Singapore UTC + 08:00
+          </option>
+          <option value="8.75" data-timezonelocalstring="Australia/Eucla">
+            Eucla UTC + 08:45
+          </option>
+          <option value="9" data-timezonelocalstring="Asia/Tokyo">
+            Tokyo UTC + 09:00
+          </option>
+          <option value="9.5" data-timezonelocalstring="Australia/Adelaide">
+            Adelaide UTC + 09:30
+          </option>
+          <option value="10" data-timezonelocalstring="Australia/Sydney">
+            Sydney UTC + 10:00
+          </option>
+          <option value="10.5" data-timezonelocalstring="Australia/Lord_Howe">
+            Lord Howe Island UTC + 10:30
+          </option>
+          <option value="11" data-timezonelocalstring="Asia/Vladivostok">
+            Vladivostok UTC + 11:00
+          </option>
+          <option value="12" data-timezonelocalstring="Pacific/Auckland">
+            Auckland UTC + 12:00
+          </option>
+          <option value="12.75" data-timezonelocalstring="Pacific/Chatham">
+            Chatham Islands UTC + 12:45
+          </option>
+          <option value="13" data-timezonelocalstring="Pacific/Tongatapu">
+            Tongatapu UTC + 13:00
+          </option>
+          <option value="14" data-timezonelocalstring="Pacific/Kiritimati">
+            Kiritimati UTC + 14:00
+          </option>
         </select>
       </div>
 
       <div class="set-timer">
         <div class="innerDiv">
           <div class="labelInputDiv labelInputDiv1">
-            <label for="start-time">Start Time</label>
+            <label class="ps2" for="start-time">Start Time</label>
             <input
               type="time"
               id="start-time"
               name="start-time"
               placeholder="HH:MM"
               value="09:00"
+              step="900"
               required
             />
           </div>
           <div class="labelInputDiv labelInputDiv2">
-            <label for="end-time">End Time</label>
+            <label class="ps2" for="end-time">End Time</label>
             <input
               type="time"
               id="end-time"
               name="end-time"
               placeholder="HH:MM"
               value="17:00"
+              step="900"
               required
             />
           </div>
         </div>
-        <button id="convertTime">Convert</button>
       </div>
 
       <h2>Add City</h2>
       <div id="add-city-form">
         <div class="innerDiv">
-          <label for="city-name">City Name</label>
+          <label class="ps2" for="city-name">City Name</label>
           <input type="text" id="city-name" placeholder="City" />
         </div>
         <div class="innerDiv selectInnerDiv">
-          <label for="city-offset">Select your timezone</label>
+          <label class="ps2" for="city-offset">Select your timezone</label>
           <select id="city-offset" name="city-offset">
             <option value="5.5" selected>India UTC + 05:30</option>
             <option value="-12">Baker Island UTC − 12:00</option>
@@ -138,7 +220,7 @@
             <option value="14">Kiritimati UTC + 14:00</option>
           </select>
         </div>
-        <button id="addCity">Add</button>
+        <button id="addCity">Add City</button>
       </div>
     </div>
     <div id="result"></div>
