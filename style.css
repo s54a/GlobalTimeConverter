@@ -57,8 +57,10 @@ button {
   border-radius: 10px;
 }
 
-button:hover {
-  background-color: #007bffcc;
+button:hover,
+button:active,
+button:focus {
+  background-color: #007bffaa;
 }
 
 .timezone-selector,

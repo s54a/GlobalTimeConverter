@@ -81,3 +81,7 @@ The project has MIT License.
 ## Website Preview
 
 ![alt text](./preview.png)
+
+## Current Issues (There is only 1)
+
+When you start go nuts while calculating the working and input the working hours of a slave more then 10 Hours the analog clock starts to break and stops showing the sector but the time is still visible in Textual form. And Traders don't need to worry about it cause their working hours are set according to the Market Time from the Wikipedia Article.

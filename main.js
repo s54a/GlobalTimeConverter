@@ -149,21 +149,24 @@ function convertTime() {
       gradient = `background: conic-gradient(#ddd 0deg ${startDeg}deg,red ${startDeg}deg ${endDeg}deg,#ddd ${startDeg}deg ${endDeg}deg);`;
     }
 
-    result += `
-          <div class="resultTime">
-          ${clock(gradient)}
+    const cityNameWithoutSpaces = city.name.replace(/\s+/g, "-");
 
-            <div class="city">${city.name}</div>
-            <div class="cityTime">${resultStartTime} - ${resultEndTime}</div>
-            <div class="currentCityTime city" id="current-time-${city.name.replace(
-              /\s+/g,
-              "-"
-            )}">${getCurrentTime(city.timeZoneString)}</div>
-            <div class="city timeZoneString">${city.timeZoneString} UTC ${
+    result += `
+  <div class="resultTime">
+    ${clock(gradient)}
+    <div class="city">${city.name}</div>
+    <div class="cityTime">${resultStartTime} - ${resultEndTime}</div>
+    <div class="currentCityTime city" id="current-time-${city.name.replace(
+      /\s+/g,
+      "-"
+    )}">${getCurrentTime(city.timeZoneString)}</div>
+    <div class="city timeZoneString">${city.timeZoneString} UTC ${
       city.offset
     }</div>
-          </div>
-          `;
+    <button class="removeBtn" data-city-name="${cityNameWithoutSpaces}">Remove</button>
+    </div>
+    `;
+    // <button class="removeBtn" id="current-city-${cityNameWithoutSpaces}" onclick="removeCity('current-city-${cityNameWithoutSpaces}')">Remove</button>
   });
 
   let resultHTML = `
@@ -172,6 +175,27 @@ function convertTime() {
       `;
 
   document.getElementById("result").innerHTML = resultHTML;
+
+  // Attach event listeners for remove buttons
+  document.querySelectorAll(".removeBtn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const cityNameWithoutSpaces = this.getAttribute("data-city-name");
+      removeCity(cityNameWithoutSpaces);
+    });
+  });
+
+  function removeCity(cityNameWithoutSpaces) {
+    cities = cities.filter(
+      (city) => city.name.replace(/\s+/g, "-") !== cityNameWithoutSpaces
+    );
+    saveCities();
+    convertTime();
+    Toastify({
+      text: `City removed successfully!`,
+      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+      duration: 3000,
+    }).showToast();
+  }
 }
 
 function convertTimeToCity(myTimezone, time, targetTimeZoneString) {

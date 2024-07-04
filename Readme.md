@@ -116,4 +116,8 @@ This project is licensed under the MIT License.
 
 Special thanks to the online resources, ChatGPT and communities that provided valuable assistance during the development of this project.
 
+## Current Issues
+
+Currently, there is one known issue with the analog clocks when inputting working hours exceeding 10 hours. In such cases, the analog clock may stop displaying the sector but will continue to show the time in textual form. Traders need not worry about this issue as their working hours are synchronized with market times sourced from the Wikipedia article on major stock exchanges.
+
 ---
