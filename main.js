@@ -4,437 +4,95 @@ import "toastify-js/src/toastify.css"; // Import the CSS file
 import Toastify from "toastify-js";
 import moment from "moment-timezone";
 import { clock } from "./clockComponent";
-import { timeToValue } from "./time";
+import { timeToDegreeValue } from "./time";
+import { loadCities } from "./cities";
 
-// Function to load cities from local storage
-function loadCities() {
-  const storedCities = localStorage.getItem("cities");
-  if (storedCities) {
-    return JSON.parse(storedCities);
-  } else {
-    return [
-      {
-        name: "San Francisco",
-        offset: -7,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/Los_Angeles",
-      },
-      {
-        name: "New York",
-        offset: -4,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/New_York",
-      },
-      {
-        name: "London",
-        offset: 1,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/London",
-      },
-      {
-        name: "Dubai",
-        offset: 4,
-        isMarket: false,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Dubai",
-      },
-      {
-        name: "Singapore",
-        offset: 8,
-        isMarket: false,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Singapore",
-      },
-      {
-        name: "Tokyo",
-        offset: 9,
-        isMarket: false,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Tokyo",
-      },
-      {
-        name: "Berlin",
-        offset: 2,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Berlin",
-      },
-      {
-        name: "Paris",
-        offset: 2,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Paris",
-      },
-      {
-        name: "Toronto",
-        offset: -4,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/Toronto",
-      },
-      {
-        name: "Seattle",
-        offset: -7,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/Los_Angeles",
-      },
-      {
-        name: "Los Angeles",
-        offset: -7,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/Los_Angeles",
-      },
-      {
-        name: "Boston",
-        offset: -4,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/New_York",
-      },
-      {
-        name: "Montreal",
-        offset: -4,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/Toronto",
-      },
-      {
-        name: "Washington D.C.",
-        offset: -4,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/New_York",
-      },
-      {
-        name: "Atlanta",
-        offset: -4,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/New_York",
-      },
-      {
-        name: "Austin",
-        offset: -5,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/Chicago",
-      },
-      {
-        name: "Chicago",
-        offset: -5,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/Chicago",
-      },
-      {
-        name: "Vancouver",
-        offset: -7,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "America/Vancouver",
-      },
-      {
-        name: "Dublin",
-        offset: 1,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Dublin",
-      },
-      {
-        name: "Amsterdam",
-        offset: 2,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Amsterdam",
-      },
-      {
-        name: "Zurich",
-        offset: 2,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Zurich",
-      },
-      {
-        name: "Stockholm",
-        offset: 2,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Stockholm",
-      },
-      {
-        name: "Madrid",
-        offset: 2,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Madrid",
-      },
-      {
-        name: "Seoul",
-        offset: 9,
-        isMarket: false,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Seoul",
-      },
-      {
-        name: "Hong Kong",
-        offset: 8,
-        isMarket: false,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Hong_Kong",
-      },
-      {
-        name: "Sydney",
-        offset: 10,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Australia/Sydney",
-      },
-      {
-        name: "Melbourne",
-        offset: 10,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Australia/Melbourne",
-      },
-      {
-        name: "Wellington",
-        offset: 12,
-        isMarket: false,
-        isAffectedByDST: true,
-        timeZoneString: "Pacific/Auckland",
-      },
-      {
-        name: "New York Stock Exchange (NYSE)",
-        offset: -4,
-        marketCap: 25.0,
-        openTime: "09:30",
-        closeTime: "16:00",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "America/New_York",
-      },
-      {
-        name: "NASDAQ",
-        offset: -4,
-        marketCap: 21.7,
-        openTime: "09:30",
-        closeTime: "16:00",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "America/New_York",
-      },
-      {
-        name: "Euronext (ENX)",
-        offset: 1,
-        marketCap: 7.2,
-        openTime: "09:00",
-        closeTime: "17:30",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Amsterdam",
-      },
-      {
-        name: "Shanghai Stock Exchange (SSE)",
-        offset: 8,
-        marketCap: 6.7,
-        openTime: "09:30",
-        closeTime: "15:00",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Shanghai",
-      },
-      {
-        name: "Tokyo Stock Exchange (TSE)",
-        offset: 9,
-        marketCap: 6.46,
-        openTime: "09:00",
-        closeTime: "15:00",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Tokyo",
-      },
-      {
-        name: "Shenzhen Stock Exchange (SZSE)",
-        offset: 8,
-        marketCap: 6.22,
-        openTime: "09:30",
-        closeTime: "15:00",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Shanghai",
-      },
-      {
-        name: "Bombay Stock Exchange (BSE)",
-        offset: 5.5,
-        marketCap: 5.1,
-        openTime: "09:15",
-        closeTime: "15:30",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Kolkata",
-      },
-      {
-        name: "National Stock Exchange of India (NSE)",
-        offset: 5.5,
-        marketCap: 5.01,
-        openTime: "09:15",
-        closeTime: "15:30",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Kolkata",
-      },
-      {
-        name: "Hong Kong Stock Exchange (HKEX)",
-        offset: 8,
-        marketCap: 3.98,
-        openTime: "09:30",
-        closeTime: "16:00",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Hong_Kong",
-      },
-      {
-        name: "Toronto Stock Exchange (TSX)",
-        offset: -5,
-        marketCap: 3.26,
-        openTime: "09:30",
-        closeTime: "16:00",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "America/Toronto",
-      },
-      {
-        name: "London Stock Exchange (LSE)",
-        offset: 0,
-        marketCap: 3.18,
-        openTime: "08:00",
-        closeTime: "16:30",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/London",
-      },
-      {
-        name: "Saudi Stock Exchange (TADAWUL)",
-        offset: 3,
-        marketCap: 2.71,
-        openTime: "10:00",
-        closeTime: "15:00",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Riyadh",
-      },
-      {
-        name: "German Stock Exchange (XETRA)",
-        offset: 1,
-        marketCap: 2.37,
-        openTime: "08:00",
-        closeTime: "17:30",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Berlin",
-      },
-      {
-        name: "SIX Swiss Exchange (SIX)",
-        offset: 1,
-        marketCap: 1.95,
-        openTime: "09:00",
-        closeTime: "17:30",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Zurich",
-      },
-      {
-        name: "Nasdaq Nordic and Baltic Exchanges (OMX)",
-        offset: 1,
-        marketCap: 1.94,
-        openTime: "09:00",
-        closeTime: "17:00",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "Europe/Stockholm",
-      },
-      {
-        name: "Korea Exchange (KRX)",
-        offset: 9,
-        marketCap: 1.83,
-        openTime: "09:00",
-        closeTime: "15:30",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Seoul",
-      },
-      {
-        name: "Taiwan Stock Exchange (TWSE)",
-        offset: 8,
-        marketCap: 1.59,
-        openTime: "09:00",
-        closeTime: "13:30",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Taipei",
-      },
-      {
-        name: "Australian Securities Exchange (ASX)",
-        offset: 10,
-        marketCap: 1.55,
-        openTime: "10:00",
-        closeTime: "16:00",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "Australia/Sydney",
-      },
-      {
-        name: "Johannesburg Stock Exchange (JSE)",
-        offset: 2,
-        marketCap: 1.36,
-        openTime: "09:00",
-        closeTime: "17:00",
-        isMarket: true,
-        isAffectedByDST: true,
-        timeZoneString: "Africa/Johannesburg",
-      },
-      {
-        name: "Tehran Stock Exchange (TSE)",
-        offset: 3.5,
-        marketCap: 1.29,
-        openTime: "09:30",
-        closeTime: "15:30",
-        isMarket: true,
-        isAffectedByDST: false,
-        timeZoneString: "Asia/Tehran",
-      },
-    ];
-  }
-}
+// Load cities from local storage
+let cities = loadCities();
 
 // Function to save cities to local storage
 function saveCities() {
   localStorage.setItem("cities", JSON.stringify(cities));
 }
 
-// Load cities from local storage
-let cities = loadCities();
+saveCities();
+
+// Function to save settings to local storage
+const saveSettingsToLocalStorage = (
+  startTime,
+  endTime,
+  timezoneValue,
+  timezoneLocalString
+) => {
+  localStorage.setItem("startTime", startTime);
+  localStorage.setItem("endTime", endTime);
+  localStorage.setItem("timezoneValue", timezoneValue);
+  localStorage.setItem("timezoneLocalString", timezoneLocalString);
+};
+
+// Function to fetch settings from local storage with default values
+const fetchSettingsFromLocalStorage = () => ({
+  startTime: localStorage.getItem("startTime") || "09:00",
+  endTime: localStorage.getItem("endTime") || "17:00",
+  timezoneValue: localStorage.getItem("timezoneValue") || "5.5",
+  timezoneLocalString:
+    localStorage.getItem("timezoneLocalString") || "Asia/Kolkata",
+});
+
+// Function to initialize time inputs and timezone from local storage
+const initializeSettings = () => {
+  const { startTime, endTime, timezoneValue, timezoneLocalString } =
+    fetchSettingsFromLocalStorage();
+  startTimeInput.value = startTime;
+  endTimeInput.value = endTime;
+  selectedTimezone.value = timezoneValue;
+
+  // Set the correct option for timezone based on timezoneLocalString
+  Array.from(selectedTimezone.options).forEach((option) => {
+    if (
+      option.getAttribute("data-timezoneLocalString") === timezoneLocalString
+    ) {
+      option.selected = true;
+    }
+  });
+};
+
+// Function to handle time input event
+const handleTimeInput = () => {
+  const startTime = startTimeInput.value;
+  const endTime = endTimeInput.value;
+  const selectedOption =
+    selectedTimezone.options[selectedTimezone.selectedIndex];
+  const timezoneValue = selectedOption.value;
+  const timezoneLocalString = getSelectedTimeZone(
+    "timezone",
+    "data-timezoneLocalString"
+  ); // Use getSelectedTimeZone to get timezoneLocalString
+
+  saveSettingsToLocalStorage(
+    startTime,
+    endTime,
+    timezoneValue,
+    timezoneLocalString
+  );
+  convertTime(); // Call convertTime to update converted time
+};
+
+// Function to get the selected timezone's data-timezoneLocalString attribute
+function getSelectedTimeZone(id, dataId) {
+  const timezoneSelect = document.getElementById(id);
+  const selectedOption = timezoneSelect.options[timezoneSelect.selectedIndex];
+  const timeZoneLocalString = selectedOption.getAttribute(dataId);
+  return timeZoneLocalString;
+}
 
 function convertTime() {
-  function getSelectedTimeZone() {
-    const timezoneSelect = document.getElementById("timezone");
-    const selectedOption = timezoneSelect.options[timezoneSelect.selectedIndex];
-    const timeZoneLocalString = selectedOption.getAttribute(
-      "data-timezonelocalstring"
-    );
-    return timeZoneLocalString;
-  }
+  const { startTime, endTime } = fetchSettingsFromLocalStorage();
 
-  const myTimezone = getSelectedTimeZone();
-
-  const startTime = document.getElementById("start-time").value;
-  const endTime = document.getElementById("end-time").value;
+  const myTimezone = getSelectedTimeZone(
+    "timezone",
+    "data-timezoneLocalString"
+  );
 
   let cityName =
     document.getElementById("timezone").options[
@@ -480,8 +138,8 @@ function convertTime() {
       city.timeZoneString
     );
 
-    startDeg = timeToValue(resultStartTime);
-    endDeg = timeToValue(resultEndTime);
+    startDeg = timeToDegreeValue(resultStartTime);
+    endDeg = timeToDegreeValue(resultEndTime);
 
     let gradient;
 
@@ -548,8 +206,16 @@ function addCity() {
         duration: 3000,
       }).showToast();
     } else {
+      const myTimezone = getSelectedTimeZone(
+        "city-offset",
+        "data-timezoneLocalStringForAddCity"
+      );
       // Add the new city if it doesn't already exist
-      cities.unshift({ name: capitalizedCityName, offset: cityOffset }); // Add to the beginning of the array
+      cities.unshift({
+        name: capitalizedCityName,
+        offset: cityOffset,
+        timeZoneString: myTimezone,
+      }); // Add to the beginning of the array
       saveCities(); // Save updated cities to local storage
       // Show toast message for successful addition
       Toastify({
@@ -569,8 +235,7 @@ function addCity() {
 
   // Clear input fields
   document.getElementById("city-name").value = "";
-  document.getElementById("city-offset").value = "";
-  convertTime();
+  handleTimeInput();
 }
 
 function getCurrentTime(timezone) {
@@ -598,15 +263,29 @@ setInterval(() => {
 
 convertTime();
 
+// References to HTML elements
 const addCityBtn = document.querySelector("#addCity");
 const startTimeInput = document.getElementById("start-time");
 const endTimeInput = document.getElementById("end-time");
 const selectedTimezone = document.getElementById("timezone");
+const cityNameInput = document.getElementById("city-name");
 
+// Add event listeners for time inputs and timezone change
+startTimeInput.addEventListener("input", handleTimeInput);
+endTimeInput.addEventListener("input", handleTimeInput);
 addCityBtn.addEventListener("click", addCity);
-selectedTimezone.addEventListener("change", convertTime);
-startTimeInput.addEventListener("input", convertTime);
-endTimeInput.addEventListener("input", convertTime);
+selectedTimezone.addEventListener("change", handleTimeInput);
+
+// Add event listener for Enter key press on city name input
+cityNameInput.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    addCity(); // Call addCity function when Enter is pressed
+  }
+});
+
+// Initialize settings on page load
+initializeSettings();
+document.addEventListener("DOMContentLoaded", initializeSettings);
 
 /* -- Glow effect -- */
 
