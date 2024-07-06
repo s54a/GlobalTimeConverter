@@ -4,7 +4,7 @@
 
 I think I am not wrong to say that every one wants a Remote Job.
 
-I also wanted one I spent time day dreaming about but while dreaming about it was a bit hard to calculate the working hours for different cities (I contemplated many possible scenarios).
+I also wanted one I spent time day dreaming about it but while dreaming about it was a bit hard to calculate the working hours for different cities (I contemplated many possible scenarios).
 
 So I built this.
 
@@ -13,7 +13,7 @@ So there is a form where you will have to add your details.
 First you have to select the Timezone you are in. I am from India so default selection is India.
 As you change it will show you the updated time below immediately.
 
-Why you can't select a city, country or a region cause it there are about 38 Timezones and thousands cities and 200 or so countries so everyone who is going to use can figure out the Timezone you are in.
+While selecting the Timezone Why you can't select a city, country or a region cause it there are about 38 Timezones and thousands cities and 200 or so countries so everyone who is going to use can they can figure out the Timezone you are in.
 
 Then select the working hour of you company.
 I thought the most common working hours would be 0900 to 1700 so these are the default values.
@@ -27,7 +27,7 @@ how to add cities
 
 enter city name & select the timezone and press the Add City Button
 
-And I have made it such that when you add a new city it will be added in at the start.
+And I have made it such that when you add a new city it will be added at the start.
 
 So below form there is some text repeating the same information in a written way and below it there is Github Link for the project.
 
@@ -84,4 +84,4 @@ The project has MIT License.
 
 ## Current Issues (There is only 1)
 
-When you start go nuts while calculating the working and input the working hours of a slave more then 10 Hours the analog clock starts to break and stops showing the sector but the time is still visible in Textual form. And Traders don't need to worry about it cause their working hours are set according to the Market Time from the Wikipedia Article.
+When you start go nuts while calculating the working and input the working hours of a slave (more then 10 Hours) the analog clock starts to break and stops showing the sector but the time is still visible in Textual form. And Traders don't need to worry about it cause their working hours are set according to the Market Time from the Wikipedia Article.
