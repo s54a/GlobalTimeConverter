@@ -14,9 +14,9 @@
   <body>
     <!-- <div id="blob"></div> -->
     <h1>Global Time Converter</h1>
-    <div class="container">
+    <div class="container" id="container">
       <div class="timezone-selector">
-        <label class="ps2" for="timezone">Timezone</label>
+        <label class="ps2" for="timezone">Current Timezone</label>
         <select id="timezone" name="timezone">
           <option value="5.5" data-timezoneLocalString="Asia/Kolkata" selected>
             India UTC + 05:30
@@ -175,7 +175,7 @@
           <input type="text" id="city-name" placeholder="City" />
         </div>
         <div class="innerDiv selectInnerDiv">
-          <label class="ps2" for="city-offset">Select your timezone</label>
+          <label class="ps2" for="city-offset">City Timezone</label>
           <select id="city-offset" name="city-offset">
             <option
               value="-12"
@@ -398,16 +398,4 @@
     <div id="result"></div>
     <script type="module" src="main.js"></script>
   </body>
-  <script>
-    function removeCity(cityName) {
-      const cityElement = document.getElementById(`current-city-${cityName}`);
-      console.log("From index");
-      console.log(cityElement);
-      if (cityElement) {
-        // cityElement.parentElement.remove();
-        // saveCities();
-        // convertTime();
-      }
-    }
-  </script>
 </html>
